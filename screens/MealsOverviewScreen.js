@@ -10,12 +10,6 @@ const MealsOverviewScreen = ({ route, navigation }) => {
     return mealItem.categoryIds.indexOf(categoryId) >= 0;
   });
 
-  const pressMealHandler = () => {
-    navigation.navigate("MealDetail", {
-      mealId: mealId,
-    });
-  };
-
   useLayoutEffect(() => {
     const categoryTitle = CATEGORIES.find(
       (category) => category.id === categoryId
@@ -27,7 +21,7 @@ const MealsOverviewScreen = ({ route, navigation }) => {
   }, [categoryId, navigation]);
 
   const renderMealItem = ({ item }) => {
-    return <MealItem {...item} onPress={pressMealHandler} />;
+    return <MealItem {...item} />;
   };
 
   return (
