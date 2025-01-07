@@ -12,7 +12,7 @@ const MealsOverviewScreen = ({ route, navigation }) => {
 
   const pressMealHandler = () => {
     navigation.navigate("MealDetail", {
-      categoryId: categoryId,
+      mealId: mealId,
     });
   };
 

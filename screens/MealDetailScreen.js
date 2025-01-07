@@ -1,9 +1,18 @@
-import { Text } from "react-native";
+import { Text, View } from "react-native";
 
 const MealDetailScreen = ({ route, navigation }) => {
-  const categoryId = route.params.categoryId;
+  const mealId = route.params.mealId;
 
-  return <Text>{categoryId}</Text>;
+  return (
+    <View>
+      <Image />
+      <Text>{categoryId}</Text>
+      <View></View>
+
+      <Text>Ingredients</Text>
+      <Text>Steps</Text>
+    </View>
+  );
 };
 
 export default MealDetailScreen;
