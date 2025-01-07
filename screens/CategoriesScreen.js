@@ -21,6 +21,7 @@ const CategoriesScreen = ({ navigation }) => {
 
   return (
     <FlatList
+      style={{ padding: 8 }}
       key="#"
       data={CATEGORIES}
       keyExtractor={(item) => item.id}
