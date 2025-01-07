@@ -28,11 +28,11 @@ const styles = StyleSheet.create({
     height: 150,
     borderRadius: 8,
     backgroundColor: "white",
-    elevation: 4, //android
-    shadowColor: "black", // ios
-    shadowOpacity: 0.25, //
-    shadowOffset: { width: 0, height: 2 }, //
-    shadowRadius: 8, //
+    elevation: 4,
+    shadowColor: "black",
+    shadowOpacity: 0.25,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 8,
     overflow: Platform.OS === "android" ? "hidden" : "visible",
   },
 
