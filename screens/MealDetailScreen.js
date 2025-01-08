@@ -1,12 +1,18 @@
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import { MEALS } from "../data/dummy-data";
 import MealDetails from "../components/MealDetails";
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useState } from "react";
 import FavoriteButton from "../components/MealsList/FavoriteButton";
+import MealStep from "../components/MealIngredient";
+import MealIngredient from "../components/MealIngredient";
 
 const MealDetailScreen = ({ route, navigation }) => {
   const mealId = route.params.mealId;
   const selectedMeal = MEALS.find((meal) => meal.id === mealId);
+
+  const [selectedIngredients, setSelectedIngredients] = useState(
+    Array(selectedMeal.ingredients.length).fill(false)
+  );
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -29,10 +35,14 @@ const MealDetailScreen = ({ route, navigation }) => {
         />
 
         <Text style={styles.subtitle}>Ingredients</Text>
-        {selectedMeal.ingredients.map((ingredient) => (
-          <Text style={styles.text} key={ingredient}>
-            {ingredient}
-          </Text>
+        {selectedMeal.ingredients.map((ingredient, i) => (
+          <MealIngredient
+            selectedIngredients={selectedIngredients}
+            setSelectedIngredients={setSelectedIngredients}
+            index={i}
+            ingredient={ingredient}
+            style={styles.text}
+          />
         ))}
 
         <Text style={styles.subtitle}>Steps</Text>
