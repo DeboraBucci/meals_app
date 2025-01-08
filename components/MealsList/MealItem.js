@@ -8,6 +8,7 @@ import {
   View,
 } from "react-native";
 import MealDetails from "../MealDetails";
+import FavoriteButton from "./FavoriteButton";
 
 const MealItem = ({
   title,
@@ -33,6 +34,10 @@ const MealItem = ({
         style={({ pressed }) => (pressed ? styles.buttonPressed : null)}
       >
         <View style={styles.innerContainer}>
+          <View style={styles.iconContiner}>
+            <FavoriteButton id={id} />
+          </View>
+
           <View>
             <Image source={{ uri: imageUrl }} style={styles.image} />
             <Text style={styles.title}>{title}</Text>
@@ -83,5 +88,14 @@ const styles = StyleSheet.create({
 
   buttonPressed: {
     opacity: 0.5,
+  },
+
+  iconContiner: {
+    position: "absolute",
+    top: 0,
+    right: 0,
+    zIndex: 1,
+    width: 30,
+    margin: 16,
   },
 });
