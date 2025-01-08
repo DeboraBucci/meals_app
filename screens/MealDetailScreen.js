@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
     backgroundColor: "white",
     padding: 24,
+    paddingBottom: 100,
   },
 
   title: {
@@ -87,7 +88,7 @@ const styles = StyleSheet.create({
   step: {
     backgroundColor: "#fdf3ed",
     borderRadius: 12,
-    padding: 8,
+    padding: 12,
     marginBottom: 12,
   },
 
