@@ -2,16 +2,67 @@ import Category from "../models/category";
 import Meal from "../models/meal";
 
 export const CATEGORIES = [
-  new Category("c1", "Italian", "#f5428d"),
-  new Category("c2", "Quick & Easy", "#f54242"),
-  new Category("c3", "Hamburgers", "#f5a442"),
-  new Category("c4", "German", "#f5d142"),
-  new Category("c5", "Light & Lovely", "#368dff"),
-  new Category("c6", "Exotic", "#41d95d"),
-  new Category("c7", "Breakfast", "#9eecff"),
-  new Category("c8", "Asian", "#b9ffb0"),
-  new Category("c9", "French", "#ffc7ff"),
-  new Category("c10", "Summer", "#47fced"),
+  new Category(
+    "c1",
+    "Italian",
+    "#f5428d",
+    require("../assets/category-images/italian-food.jpg")
+  ),
+
+  new Category(
+    "c2",
+    "Quick & Easy",
+    "#f54242",
+    require("../assets/category-images/quick-and-easy-food.jpg")
+  ),
+  new Category(
+    "c3",
+    "Burgers",
+    "#f5a442",
+    require("../assets/category-images/hamburguer-food.jpg")
+  ),
+  new Category(
+    "c4",
+    "German",
+    "#f5d142",
+    require("../assets/category-images/german-food.jpg")
+  ),
+  new Category(
+    "c5",
+    "Light & Lovely",
+    "#368dff",
+    require("../assets/category-images/light-and-lovely-food.jpg")
+  ),
+  new Category(
+    "c6",
+    "Exotic",
+    "#41d95d",
+    require("../assets/category-images/exotic-food.jpg")
+  ),
+  new Category(
+    "c7",
+    "Break\nFast",
+    "#9eecff",
+    require("../assets/category-images/breakfast-food.jpg")
+  ),
+  new Category(
+    "c8",
+    "Asian",
+    "#b9ffb0",
+    require("../assets/category-images/asian-food.jpg")
+  ),
+  new Category(
+    "c9",
+    "French",
+    "#ffc7ff",
+    require("../assets/category-images/french-food.jpg")
+  ),
+  new Category(
+    "c10",
+    "Summer",
+    "#47fced",
+    require("../assets/category-images/summer-food.jpg")
+  ),
 ];
 
 export const MEALS = [

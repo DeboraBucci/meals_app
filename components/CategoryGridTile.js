@@ -1,6 +1,13 @@
-import { Pressable, StyleSheet, Text, View, Platform } from "react-native";
+import {
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+  Platform,
+  Image,
+} from "react-native";
 
-const CategoryGridTile = ({ title, color, onPress }) => {
+const CategoryGridTile = ({ title, imageUrl, color, onPress }) => {
   return (
     <View style={styles.gridItem}>
       <Pressable
@@ -11,7 +18,12 @@ const CategoryGridTile = ({ title, color, onPress }) => {
           pressed ? styles.buttonPressed : null,
         ]}
       >
-        <View style={[styles.innerContainer, { backgroundColor: color }]}>
+        <View style={[styles.imageContainer, { backgroundColor: color }]}>
+          <Image source={imageUrl} style={styles.image} />
+          <View style={styles.overlay} />
+        </View>
+
+        <View style={styles.innerContainer}>
           <Text style={styles.title}>{title}</Text>
         </View>
       </Pressable>
@@ -25,7 +37,7 @@ const styles = StyleSheet.create({
   gridItem: {
     flex: 1,
     margin: 8,
-    height: 80,
+    height: 150,
     borderRadius: 8,
     backgroundColor: "white",
     elevation: 4,
@@ -45,11 +57,32 @@ const styles = StyleSheet.create({
   },
 
   title: {
+    width: "100%",
     fontWeight: "bold",
-    fontSize: 18,
+    fontSize: 24,
+    color: "white",
+    letterSpacing: 5,
+    textTransform: "uppercase",
+    textAlign: "center",
   },
 
   buttonPressed: {
     opacity: 0.5,
+  },
+
+  imageContainer: {
+    ...StyleSheet.absoluteFillObject,
+    overflow: "hidden",
+  },
+
+  image: {
+    width: "100%",
+    height: "100%",
+    resizeMode: "cover",
+  },
+
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
   },
 });

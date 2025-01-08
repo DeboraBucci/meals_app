@@ -13,6 +13,7 @@ const CategoriesScreen = ({ navigation }) => {
     return (
       <CategoryGridTile
         title={itemData.item.title}
+        imageUrl={itemData.item.imageUrl}
         color={itemData.item.color}
         onPress={pressHandler}
       />
@@ -21,7 +22,7 @@ const CategoriesScreen = ({ navigation }) => {
 
   return (
     <FlatList
-      style={{ padding: 8 }}
+      style={{ padding: 8, marginBottom: 12 }}
       key="#"
       data={CATEGORIES}
       keyExtractor={(item) => item.id}
